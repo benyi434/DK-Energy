@@ -1,0 +1,121 @@
+// ESQUEMÁTICO DK ENERGY - Powerbank Solar 18650
+// Generado para Proteus 8 Professional
+// Componentes y conexiones basadas en el proyecto integrador IPET 250
+
+// --- COMPONENTES DEL ESQUEMÁTICO ---
+
+// PIC16F887
+// Pines:
+// RA0/AN0 - Tensión batería (divisor R1=10k, R2=3.3k)
+// RA1/AN1 - Tensión panel (divisor)
+// RA2/AN2 - Corriente LM393
+// RC0 - LED verde carga
+// RC1 - Botón Menú
+// RC2 - Botón Teléfono
+// RC6/TX - UART salida HC-05
+// RC7/RX - UART entrada HC-05
+// RD0-RD7 - LCD datos (modo 4 bits)
+// RD1 - LCD RS
+// RD2 - LCD RW (a GND)
+// RD4-RD7 - LCD datos D4-D7
+// RA6/OSC2/CLKO - Cristal 20MHz (modo HS)
+// RA7/OSC1/CLKI - Cristal 20MHz
+// MCLR - Libre (NOMCLR en fusibles)
+
+// TP4056 (como bloque/módulo sin simulación eléctrica)
+// Pines:
+// IN+ - Panel solar (por diodo Schottky)
+// IN- - Panel solar (-) / GND común
+// BAT+ - Batería 18650 +
+// BAT- - Batería 18650 - / GND sistema
+// OUT+ - Alimentación MT3608 (boost)
+// OUT- - GND sistema (bat -)
+// PROG - Resistencia programadora (1kΩ para 300mA)
+// CHRG - LED rojo (carga)
+// STDBY - LED verde (carga terminada)
+
+// MT3608 (step-up)
+// Pines:
+// IN+ - Conexión OUT+ TP405856
+// IN- - GND sistema (OUT- TP4056)
+// EN - Habilitación (pulled up a VCC)
+// FB - Pin de feedback (para trimmer a 5.0V)
+// OUT+ - 5V salida USB
+// OUT- - GND USB
+
+// LCD 16x2 LM016L / HD44780
+// Pines:
+// VSS - GND
+// VDD - +5V
+// VO - Contraste (potenciómetro 10k)
+// RS - Registro select
+// RW - Lectura/escritura (a GND)
+// E - Enable
+// D0-D7 - Datos (4 bits superiores: D4-D7)
+// A - Anodo retroiluminación (+5V)
+// K - Cátodo retroiluminación (transistor BC547)
+
+// Diodo Schottky 1N5822 / SS34
+// Pines:
+// A (ánodo) - Panel solar (+)
+// K (cátodo) - TP4056 IN+
+
+// Batería 18650
+// Pines:
+// + - Batería positiva (+3.7V nominal)
+// - - Batería negativa / GND
+
+// LM393 (amplificador no inversor corriente)
+// Pines:
+// OUT - Salida al PIC RA2/AN2 (con pull-up 1kΩ)
+// IN- - Divisor desde shunt 0.1Ω (a GND)
+// IN+ - Shunt 0.1Ω desde riel GND
+// VCC - +5V (desde MT3608 output)
+// GND - GND sistema
+
+// Divisores y resistencias:
+// R1 = 10kΩ - Divisor tensión batería (RA0/AN0)
+// R2 = 3.3kΩ - Divisor tensión batería
+// R3 = 3.3kΩ - Pull-ups botones (RB0, RB1, etc.)  
+// R4 = 0.1Ω - Shunt medición corriente
+// R5 = 470kΩ - Ganancia LM393 (no inversor)
+// R6 = 1kΩ - Pull-up LM393 OUTPUT
+// R7 = 330Ω - LED verde
+// R8 = 1kΩ - Base transistor retroiluminación
+// R9 = 10kΩ - Potenciómetro contraste LCD
+// R10 = 10kΩ - Pull-ups botones secundarios
+
+// Botones táctiles 6×6:
+// B.A - Encendido (RB0/INT, flanco descendente para wake-up)
+// B.M - Menú (con pull-up)
+// B.C - Teléfono (simulado, con pull-up)
+
+// Cristal 20MHz (modo HS para PIC)
+// Pines:
+// RA6/OSC2 - Cristal 1
+// RA7/OSC1 - Cristal 2
+
+// Conexiones de poder:
+// +5V - Salida MT3608, alimenta PIC VDD, LM2596 para 3.3V HC-05
+// GND - Tierra común todas las componentes
+// +3.3V - LM2596 ajustado, alimenta RX del HC-05 (divisor)
+
+// UART HC-05:
+// PIC RC6/TX → HC-05 RXD (con divisor voltaje 5V→3.3V)
+// PIC RC7/RX ← HC-05 TXD (con divisor voltaje, o nivelador)
+
+// LCD al PIC:
+// PIC RD0-E, RD1-RS, RD2-RW(aGND), RD4-D4, RD5-D5, RD6-D6, RD7-D7
+// PIC RC0 → LED verde (330Ω)
+// PIC RC1 → Botón Menú (pull-up)
+// PIC RC2 → Botón Teléfono (pull-up)
+
+// Proteus NOTAS:
+// - TP4056: NO se simula eléctricamente, se muestra como bloque con pines
+// - HC-05: En simulación se usa VTERM conectado al TX PIC, NO se simula BT real
+// - Panel solar: Fuente 5V DC (no hay modelo solar real)
+// - Carga USB: Simulación de tensión, no celular real
+
+// FUSIBLES PIC16F887 (CCS C):
+// #fuses LP, NOWDT, NOPROTECT, NOBROWNOUT, NOLVP, PUT, NOMCLR
+// #use delay(clock=32768) // para modo bajo consumo LP

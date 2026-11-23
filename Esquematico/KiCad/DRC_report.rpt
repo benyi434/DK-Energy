@@ -1,0 +1,1305 @@
+** Drc report for DK_Energy.kicad_pcb **
+** Created on 2026-11-21T16:18:37 **
+** Report includes: Errors, Warnings **
+
+** Found 235 DRC violations **
+[clearance]: Infracción de margen ( margen 0,2000 mm; real 0,0000 mm)
+    Local override; error
+    @(12.5000 mm, 85.0000 mm): PTH pad 5 [GND] of REF**
+    @(11.0000 mm, 85.0000 mm): PTH pad 4 [<no net>] of REF**
+[clearance]: Infracción de margen ( margen 0,2000 mm; real 0,0000 mm)
+    Local override; error
+    @(12.5000 mm, 85.0000 mm): PTH pad 5 [GND] of REF**
+    @(11.0000 mm, 85.0000 mm): PTH pad 4 [<no net>] of REF**
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(120.0000 mm, 90.0000 mm): Segment on Edge.Cuts
+    @(73.0000 mm, 87.2500 mm): Arc of M2 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(0.0000 mm, 0.0000 mm): Segment on Edge.Cuts
+    @(-2034.4835 mm, 27.0000 mm): Arc of REF** on F.Silkscreen
+[hole_to_hole]: Taladro demasiado cerca de otro taladro (restricciones de configuración de placa mínimo 0,2500 mm; real 0,0000 mm)
+    Rule: restricciones de configuración de placa; warning
+    @(5.0000 mm, 85.0000 mm): NPTH pad of REF**
+    @(3.5000 mm, 85.0000 mm): PTH pad 1 [PANEL] of REF**
+[hole_to_hole]: Taladro demasiado cerca de otro taladro (restricciones de configuración de placa mínimo 0,2500 mm; real 0,0000 mm)
+    Rule: restricciones de configuración de placa; warning
+    @(5.0000 mm, 85.0000 mm): NPTH pad of REF**
+    @(6.0000 mm, 85.0000 mm): PTH pad 2 [<no net>] of REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(8.0000 mm, 85.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(20.0000 mm, 85.0000 mm): Footprint D1
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(45.0000 mm, 80.0000 mm): Footprint M1
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(15.0000 mm, 12.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(80.0000 mm, 80.0000 mm): Footprint M2
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(100.0000 mm, 80.0000 mm): Footprint C1
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(112.0000 mm, 80.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(25.0000 mm, 55.0000 mm): Footprint U3
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(15.0000 mm, 60.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(12.0000 mm, 52.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(12.0000 mm, 45.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(35.0000 mm, 60.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(40.0000 mm, 60.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(95.0000 mm, 55.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(80.0000 mm, 42.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(78.0000 mm, 28.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(90.0000 mm, 28.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(100.0000 mm, 28.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(78.0000 mm, 38.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(90.0000 mm, 38.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(100.0000 mm, 38.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(113.0000 mm, 42.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(113.0000 mm, 35.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(113.0000 mm, 27.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(107.0000 mm, 27.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(50.0000 mm, 40.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(50.0000 mm, 48.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(57.0000 mm, 48.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(64.0000 mm, 40.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(64.0000 mm, 48.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(71.0000 mm, 48.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(50.0000 mm, 30.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(57.0000 mm, 33.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(50.0000 mm, 26.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(64.0000 mm, 28.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(70.0000 mm, 28.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(80.0000 mm, 65.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(5.0000 mm, 5.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(115.0000 mm, 5.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(5.0000 mm, 85.0000 mm): Footprint REF**
+[lib_footprint_issues]: La biblioteca de huellas 'DK_Energy' no está habilitada en la configuración actual
+    Local override; warning
+    @(115.0000 mm, 85.0000 mm): Footprint REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(35.5620 mm, 80.0860 mm): Footprint text of M1 (microUSB)
+    @(36.8320 mm, 77.2920 mm): Segment of M1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(60.5000 mm, 74.0000 mm): Segment of M2 on F.Silkscreen
+    @(63.0000 mm, 83.2500 mm): PTH pad 3 [GND] of M2
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(73.0000 mm, 87.2500 mm): Arc of M2 on F.Silkscreen
+    @(63.0000 mm, 83.2500 mm): PTH pad 3 [GND] of M2
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(60.5000 mm, 74.0000 mm): Segment of M2 on F.Silkscreen
+    @(63.0000 mm, 76.7500 mm): PTH pad 4 [+5V] of M2
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(64.0000 mm, 73.5000 mm): Footprint text of M2 (VOUT+)
+    @(61.7500 mm, 104.6250 mm): Arc of M2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(94.0000 mm, 76.8000 mm): PTH pad 1 [VBAT_PROT] of M2
+    @(96.5000 mm, 86.0000 mm): Segment of M2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(94.0000 mm, 76.8000 mm): PTH pad 1 [VBAT_PROT] of M2
+    @(85.1786 mm, 72.7500 mm): Arc of M2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(94.0000 mm, 76.8000 mm): PTH pad 1 [VBAT_PROT] of M2
+    @(96.2000 mm, 78.5000 mm): Footprint text of C1 (+)
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(94.0000 mm, 83.2500 mm): PTH pad 2 [GND] of M2
+    @(96.5000 mm, 86.0000 mm): Segment of M2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(96.5000 mm, 86.0000 mm): Segment of M2 on F.Silkscreen
+    @(96.2000 mm, 78.5000 mm): Footprint text of C1 (+)
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(72.3800 mm, 67.5400 mm): Segment of REF** on F.Silkscreen
+    @(85.1786 mm, 72.7500 mm): Arc of M2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(85.1786 mm, 72.7500 mm): Arc of M2 on F.Silkscreen
+    @(81.2700 mm, 65.0000 mm): PTH pad 4 [PGD] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(87.6200 mm, 62.4600 mm): Segment of REF** on F.Silkscreen
+    @(85.1786 mm, 72.7500 mm): Arc of M2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(73.0000 mm, 87.2500 mm): Arc of M2 on F.Silkscreen
+    @(64.0000 mm, 86.5000 mm): Footprint text of M2 (VOUT-)
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(94.0000 mm, 86.5000 mm): Footprint text of M2 (VIN-)
+    @(95.2500 mm, 63.7500 mm): Arc of M2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(74.6800 mm, 61.3500 mm): Segment of REF** on F.Silkscreen
+    @(86.5000 mm, 61.5000 mm): Footprint text of REF** (6)
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(115.5000 mm, 24.0000 mm): Segment of REF** on F.Silkscreen
+    @(115.5400 mm, 27.0000 mm): PTH pad 3 [LCD_K] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(113.0000 mm, 23.5000 mm): Footprint text of REF** (B)
+    @(110.5000 mm, 24.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(107.0000 mm, 24.5000 mm): Reference field of REF**
+    @(109.0000 mm, 23.5000 mm): Footprint text of REF** (E)
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(115.0000 mm, 82.0000 mm): Reference field of REF**
+    @(116.5000 mm, 82.5000 mm): PTH pad 6 [GND] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(90.0000 mm, 23.0000 mm): Reference field of REF**
+    @(93.0000 mm, 22.4500 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(78.0000 mm, 23.0000 mm): Reference field of REF**
+    @(93.0000 mm, 22.4500 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(92.4740 mm, 12.0000 mm): PTH pad 2 [VBAT_NEG] of REF**
+    @(93.0000 mm, 1.5500 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(15.5040 mm, 12.0000 mm): PTH pad 1 [VBAT] of REF**
+    @(15.0000 mm, 22.4500 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(55.6740 mm, 77.9880 mm): Footprint text of M1 (B+)
+    @(56.0000 mm, 76.2500 mm): PTH pad 3 [VBAT] of M1
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(76.5000 mm, 47.5000 mm): Footprint text of REF** (1)
+    @(75.0000 mm, 47.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(64.9000 mm, 12.1000 mm): Footprint text of REF** (BLM)
+    @(64.5000 mm, 9.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(64.9000 mm, 12.1000 mm): Footprint text of REF** (BLM)
+    @(70.5000 mm, 12.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(78.0000 mm, 35.5000 mm): Reference field of REF**
+    @(80.0000 mm, 34.5000 mm): Reference field of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(75.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(75.5000 mm, 25.5000 mm): PTH pad 1 [BTN_PWR] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(75.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(75.5000 mm, 25.5000 mm): PTH pad 1 [BTN_PWR] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(75.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(80.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(80.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+    @(81.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(75.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PWR] of REF**
+    @(75.0000 mm, 31.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(75.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(75.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PWR] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(80.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(75.0000 mm, 31.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(81.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(80.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(87.5000 mm, 25.5000 mm): PTH pad 1 [BTN_MENU] of REF**
+    @(87.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(87.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(87.5000 mm, 25.5000 mm): PTH pad 1 [BTN_MENU] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(87.5000 mm, 30.5000 mm): PTH pad 3 [BTN_MENU] of REF**
+    @(87.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(87.0000 mm, 31.0000 mm): Segment of REF** on F.Silkscreen
+    @(87.5000 mm, 30.5000 mm): PTH pad 3 [BTN_MENU] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(93.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(92.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(92.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(93.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(87.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(92.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(97.5000 mm, 25.5000 mm): PTH pad 1 [BTN_PHONE] of REF**
+    @(97.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(97.5000 mm, 25.5000 mm): PTH pad 1 [BTN_PHONE] of REF**
+    @(97.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(97.0000 mm, 31.0000 mm): Segment of REF** on F.Silkscreen
+    @(97.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PHONE] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(97.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+    @(97.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PHONE] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(92.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(87.0000 mm, 31.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(113.0000 mm, 42.0000 mm): Circle of REF** on F.Silkscreen
+    @(114.2500 mm, 42.0000 mm): PTH pad 1 [LED_A] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(114.5000 mm, 42.0000 mm): Segment of REF** on F.Silkscreen
+    @(114.2500 mm, 42.0000 mm): PTH pad 1 [LED_A] of REF**
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(111.7500 mm, 42.0000 mm): PTH pad 2 [GND] of REF**
+    @(113.0000 mm, 42.0000 mm): Circle of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(111.7500 mm, 42.0000 mm): PTH pad 2 [GND] of REF**
+    @(111.5000 mm, 40.5000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(102.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+    @(97.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(102.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+    @(103.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(102.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(97.0000 mm, 31.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(102.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(103.0000 mm, 25.0000 mm): Segment of REF** on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: restricciones de configuración de placa para serigrafía; warning
+    @(110.5000 mm, 24.0000 mm): Segment of REF** on F.Silkscreen
+    @(110.4600 mm, 27.0000 mm): PTH pad 1 [GND] of REF**
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(18.0000 mm, 82.8000 mm): Segment of D1 on F.Silkscreen
+    @(17.5000 mm, 85.0000 mm): Pad 1 [PANEL] of D1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(22.0000 mm, 82.8000 mm): Segment of D1 on F.Silkscreen
+    @(22.5000 mm, 85.0000 mm): Pad 2 [PANEL_IN] of D1 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(3.5000 mm, 85.0000 mm): PTH pad 1 [PANEL] of REF**
+    @(5.0000 mm, 85.0000 mm): NPTH pad of REF**
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(6.0000 mm, 85.0000 mm): PTH pad 2 [<no net>] of REF**
+    @(5.0000 mm, 85.0000 mm): NPTH pad of REF**
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 40.0000 mm): Pad 1 [VBAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 40.0000 mm): Pad 2 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 40.6000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 40.0000 mm): Pad 1 [VBAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 40.6000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 40.0000 mm): Pad 2 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 40.0000 mm): Pad 1 [VBAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(51.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 40.0000 mm): Pad 2 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(51.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 29.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 30.0000 mm): Pad 1 [SHUNT_HI] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 29.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 30.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 30.6000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 30.0000 mm): Pad 1 [SHUNT_HI] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 30.6000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 30.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 29.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 30.0000 mm): Pad 1 [SHUNT_HI] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(51.0000 mm, 29.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 30.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 25.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 26.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 25.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 26.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 26.6000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 26.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 26.6000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 26.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(49.0000 mm, 25.4000 mm): Segment of REF** on F.Silkscreen
+    @(49.3000 mm, 26.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(51.0000 mm, 25.4000 mm): Segment of REF** on F.Silkscreen
+    @(50.7000 mm, 26.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.0000 mm, 26.4000 mm): Segment of REF** on F.Silkscreen
+    @(106.3000 mm, 27.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.0000 mm, 26.4000 mm): Segment of REF** on F.Silkscreen
+    @(107.7000 mm, 27.0000 mm): Pad 2 [BL_BASE] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.0000 mm, 27.6000 mm): Segment of REF** on F.Silkscreen
+    @(106.3000 mm, 27.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.0000 mm, 27.6000 mm): Segment of REF** on F.Silkscreen
+    @(107.7000 mm, 27.0000 mm): Pad 2 [BL_BASE] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(106.0000 mm, 26.4000 mm): Segment of REF** on F.Silkscreen
+    @(106.3000 mm, 27.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(108.0000 mm, 26.4000 mm): Segment of REF** on F.Silkscreen
+    @(107.7000 mm, 27.0000 mm): Pad 2 [BL_BASE] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(104.3800 mm, 85.0800 mm): Segment of REF** on F.Silkscreen
+    @(115.0000 mm, 85.0000 mm): NPTH pad of REF**
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.5000 mm, 82.5000 mm): PTH pad 6 [GND] of REF**
+    @(115.0000 mm, 85.0000 mm): NPTH pad of REF**
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(56.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(56.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(56.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(57.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(56.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(56.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(56.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(57.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(56.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(56.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(58.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(57.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 40.0000 mm): Pad 2 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 40.0000 mm): Pad 1 [PANEL_IN] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 40.6000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 40.0000 mm): Pad 2 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 40.6000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 40.0000 mm): Pad 1 [PANEL_IN] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 40.0000 mm): Pad 1 [PANEL_IN] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(65.0000 mm, 39.4000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 40.0000 mm): Pad 2 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(65.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(70.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(70.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(70.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(71.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(70.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(70.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(70.0000 mm, 48.6000 mm): Segment of REF** on F.Silkscreen
+    @(71.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(70.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(70.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(72.0000 mm, 47.4000 mm): Segment of REF** on F.Silkscreen
+    @(71.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(20.0000 mm, 33.0000 mm): Segment of U3 on F.Silkscreen
+    @(21.1900 mm, 33.4100 mm): PTH pad 19 [LCD_E] of U3
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(21.5000 mm, 33.0000 mm): Segment of U3 on F.Silkscreen
+    @(21.1900 mm, 33.4100 mm): PTH pad 19 [LCD_E] of U3
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 51.4000 mm): Segment of REF** on F.Silkscreen
+    @(11.3000 mm, 52.0000 mm): Pad 1 [OSC1] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 51.4000 mm): Segment of REF** on F.Silkscreen
+    @(12.7000 mm, 52.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 52.6000 mm): Segment of REF** on F.Silkscreen
+    @(11.3000 mm, 52.0000 mm): Pad 1 [OSC1] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 52.6000 mm): Segment of REF** on F.Silkscreen
+    @(12.7000 mm, 52.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 51.4000 mm): Segment of REF** on F.Silkscreen
+    @(11.3000 mm, 52.0000 mm): Pad 1 [OSC1] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(13.0000 mm, 51.4000 mm): Segment of REF** on F.Silkscreen
+    @(12.7000 mm, 52.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 44.4000 mm): Segment of REF** on F.Silkscreen
+    @(11.3000 mm, 45.0000 mm): Pad 1 [OSC2] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 44.4000 mm): Segment of REF** on F.Silkscreen
+    @(12.7000 mm, 45.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 45.6000 mm): Segment of REF** on F.Silkscreen
+    @(11.3000 mm, 45.0000 mm): Pad 1 [OSC2] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 45.6000 mm): Segment of REF** on F.Silkscreen
+    @(12.7000 mm, 45.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(11.0000 mm, 44.4000 mm): Segment of REF** on F.Silkscreen
+    @(11.3000 mm, 45.0000 mm): Pad 1 [OSC2] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(13.0000 mm, 44.4000 mm): Segment of REF** on F.Silkscreen
+    @(12.7000 mm, 45.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(55.0500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(54.3000 mm, 33.6350 mm): Pad 2 [AMP_FB] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(55.0500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(54.3000 mm, 32.3650 mm): Pad 3 [SHUNT_HI] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(55.0500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(54.3000 mm, 31.0950 mm): Pad 4 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(55.0500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(54.3000 mm, 34.9050 mm): Pad 1 [ADC_CURR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(58.9500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(59.7000 mm, 31.0950 mm): Pad 5 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(58.9500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(59.7000 mm, 32.3650 mm): Pad 6 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(58.9500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(59.7000 mm, 33.6350 mm): Pad 7 [<no net>] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(58.9500 mm, 30.5500 mm): Segment of REF** on F.Silkscreen
+    @(59.7000 mm, 34.9050 mm): Pad 8 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 28.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 28.6000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 28.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 28.6000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(63.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(63.3000 mm, 28.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(65.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(64.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(69.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(69.3000 mm, 28.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(69.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(70.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(69.0000 mm, 28.6000 mm): Segment of REF** on F.Silkscreen
+    @(69.3000 mm, 28.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(69.0000 mm, 28.6000 mm): Segment of REF** on F.Silkscreen
+    @(70.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(69.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(69.3000 mm, 28.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(71.0000 mm, 27.4000 mm): Segment of REF** on F.Silkscreen
+    @(70.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(34.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(34.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(34.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(35.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(34.0000 mm, 60.6000 mm): Segment of REF** on F.Silkscreen
+    @(34.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(34.0000 mm, 60.6000 mm): Segment of REF** on F.Silkscreen
+    @(35.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(34.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(34.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(36.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(35.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(39.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(39.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(39.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(40.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(39.0000 mm, 60.6000 mm): Segment of REF** on F.Silkscreen
+    @(39.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(39.0000 mm, 60.6000 mm): Segment of REF** on F.Silkscreen
+    @(40.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(39.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(39.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(41.0000 mm, 59.4000 mm): Segment of REF** on F.Silkscreen
+    @(40.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(79.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(78.7000 mm, 38.0000 mm): Pad 2 [BTN_PWR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(77.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(77.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(77.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(78.7000 mm, 38.0000 mm): Pad 2 [BTN_PWR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(77.0000 mm, 38.6000 mm): Segment of REF** on F.Silkscreen
+    @(77.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(77.0000 mm, 38.6000 mm): Segment of REF** on F.Silkscreen
+    @(78.7000 mm, 38.0000 mm): Pad 2 [BTN_PWR] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(77.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(77.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(89.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(89.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(89.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(90.7000 mm, 38.0000 mm): Pad 2 [BTN_MENU] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(89.0000 mm, 38.6000 mm): Segment of REF** on F.Silkscreen
+    @(89.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(89.0000 mm, 38.6000 mm): Segment of REF** on F.Silkscreen
+    @(90.7000 mm, 38.0000 mm): Pad 2 [BTN_MENU] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(89.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(89.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(91.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(90.7000 mm, 38.0000 mm): Pad 2 [BTN_MENU] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(99.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(99.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(99.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(100.7000 mm, 38.0000 mm): Pad 2 [BTN_PHONE] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(99.0000 mm, 38.6000 mm): Segment of REF** on F.Silkscreen
+    @(99.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(99.0000 mm, 38.6000 mm): Segment of REF** on F.Silkscreen
+    @(100.7000 mm, 38.0000 mm): Pad 2 [BTN_PHONE] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(99.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(99.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(101.0000 mm, 37.4000 mm): Segment of REF** on F.Silkscreen
+    @(100.7000 mm, 38.0000 mm): Pad 2 [BTN_PHONE] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.0000 mm, 34.4000 mm): Segment of REF** on F.Silkscreen
+    @(112.3000 mm, 35.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.0000 mm, 34.4000 mm): Segment of REF** on F.Silkscreen
+    @(113.7000 mm, 35.0000 mm): Pad 2 [LED_A] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.0000 mm, 35.6000 mm): Segment of REF** on F.Silkscreen
+    @(112.3000 mm, 35.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.0000 mm, 35.6000 mm): Segment of REF** on F.Silkscreen
+    @(113.7000 mm, 35.0000 mm): Pad 2 [LED_A] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(112.0000 mm, 34.4000 mm): Segment of REF** on F.Silkscreen
+    @(112.3000 mm, 35.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(114.0000 mm, 34.4000 mm): Segment of REF** on F.Silkscreen
+    @(113.7000 mm, 35.0000 mm): Pad 2 [LED_A] of REF** on F.Cu
+
+** Found 97 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.1900 mm, 53.7300 mm): PTH pad 11 [+5V] of U3
+    @(28.8100 mm, 58.8100 mm): PTH pad 32 [+5V] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(34.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+    @(28.8100 mm, 58.8100 mm): PTH pad 32 [+5V] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(39.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+    @(34.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(39.3000 mm, 60.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+    @(63.0000 mm, 76.7500 mm): PTH pad 4 [+5V] of M2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(69.3000 mm, 28.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+    @(59.7000 mm, 34.9050 mm): Pad 8 [+5V] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(69.3000 mm, 28.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+    @(77.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(76.1900 mm, 65.0000 mm): PTH pad 2 [+5V] of REF**
+    @(63.0000 mm, 76.7500 mm): PTH pad 4 [+5V] of M2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(77.5000 mm, 42.0000 mm): PTH pad 1 [+5V] of REF**
+    @(77.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(77.5000 mm, 42.0000 mm): PTH pad 1 [+5V] of REF**
+    @(79.0000 mm, 55.0000 mm): PTH pad 2 [+5V] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(79.0000 mm, 55.0000 mm): PTH pad 2 [+5V] of REF**
+    @(76.1900 mm, 65.0000 mm): PTH pad 2 [+5V] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(89.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+    @(77.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(98.7500 mm, 80.0000 mm): PTH pad 1 [+5V] of C1
+    @(107.5000 mm, 77.5000 mm): PTH pad 1 [+5V] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(99.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+    @(89.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.5000 mm, 77.5000 mm): PTH pad 1 [+5V] of REF**
+    @(111.5000 mm, 55.0000 mm): PTH pad 15 [+5V] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(111.5000 mm, 55.0000 mm): PTH pad 15 [+5V] of REF**
+    @(99.3000 mm, 38.0000 mm): Pad 1 [+5V] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(49.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+    @(56.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(49.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+    @(21.1900 mm, 76.5900 mm): PTH pad 2 [ADC_BAT] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(50.7000 mm, 40.0000 mm): Pad 2 [ADC_BAT] of REF** on F.Cu
+    @(49.3000 mm, 48.0000 mm): Pad 1 [ADC_BAT] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(54.3000 mm, 34.9050 mm): Pad 1 [ADC_CURR] of REF** on F.Cu
+    @(21.1900 mm, 71.5100 mm): PTH pad 4 [ADC_CURR] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+    @(54.3000 mm, 34.9050 mm): Pad 1 [ADC_CURR] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(70.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+    @(64.7000 mm, 28.0000 mm): Pad 2 [ADC_CURR] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+    @(70.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+    @(21.1900 mm, 74.0500 mm): PTH pad 3 [ADC_PANEL] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.7000 mm, 40.0000 mm): Pad 2 [ADC_PANEL] of REF** on F.Cu
+    @(63.3000 mm, 48.0000 mm): Pad 1 [ADC_PANEL] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(49.3000 mm, 26.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+    @(54.3000 mm, 33.6350 mm): Pad 2 [AMP_FB] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(54.3000 mm, 33.6350 mm): Pad 2 [AMP_FB] of REF** on F.Cu
+    @(63.3000 mm, 28.0000 mm): Pad 1 [AMP_FB] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.7000 mm, 27.0000 mm): Pad 2 [BL_BASE] of REF** on F.Cu
+    @(113.0000 mm, 27.0000 mm): PTH pad 2 [BL_BASE] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(87.5000 mm, 25.5000 mm): PTH pad 1 [BTN_MENU] of REF**
+    @(87.5000 mm, 30.5000 mm): PTH pad 3 [BTN_MENU] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(87.5000 mm, 30.5000 mm): PTH pad 3 [BTN_MENU] of REF**
+    @(90.7000 mm, 38.0000 mm): Pad 2 [BTN_MENU] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(87.5000 mm, 30.5000 mm): PTH pad 3 [BTN_MENU] of REF**
+    @(21.1900 mm, 41.0300 mm): PTH pad 16 [BTN_MENU] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(97.5000 mm, 25.5000 mm): PTH pad 1 [BTN_PHONE] of REF**
+    @(97.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PHONE] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(97.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PHONE] of REF**
+    @(100.7000 mm, 38.0000 mm): Pad 2 [BTN_PHONE] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(97.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PHONE] of REF**
+    @(21.1900 mm, 38.4900 mm): PTH pad 17 [BTN_PHONE] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 61.3500 mm): PTH pad 33 [BTN_PWR] of U3
+    @(78.7000 mm, 38.0000 mm): Pad 2 [BTN_PWR] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(75.5000 mm, 25.5000 mm): PTH pad 1 [BTN_PWR] of REF**
+    @(75.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PWR] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(75.5000 mm, 30.5000 mm): PTH pad 3 [BTN_PWR] of REF**
+    @(78.7000 mm, 38.0000 mm): Pad 2 [BTN_PWR] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(12.5000 mm, 85.0000 mm): PTH pad 5 [GND] of REF**
+    @(34.0000 mm, 86.5000 mm): PTH pad 2 [GND] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(12.7000 mm, 52.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(12.7000 mm, 45.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(12.7000 mm, 52.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(21.1900 mm, 51.1900 mm): PTH pad 12 [GND] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.1900 mm, 51.1900 mm): PTH pad 12 [GND] of U3
+    @(28.8100 mm, 56.2700 mm): PTH pad 31 [GND] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(34.0000 mm, 86.5000 mm): PTH pad 2 [GND] of M1
+    @(56.0000 mm, 87.0000 mm): PTH pad 6 [GND] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(35.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(40.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(35.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(28.8100 mm, 56.2700 mm): PTH pad 31 [GND] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(50.7000 mm, 30.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(54.3000 mm, 31.0950 mm): Pad 4 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(50.7000 mm, 30.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(50.7000 mm, 26.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(50.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(57.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(50.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(40.7000 mm, 60.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(57.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(64.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(57.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(59.7000 mm, 32.3650 mm): Pad 6 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(59.7000 mm, 31.0950 mm): Pad 5 [GND] of REF** on F.Cu
+    @(54.3000 mm, 31.0950 mm): Pad 4 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(59.7000 mm, 32.3650 mm): Pad 6 [GND] of REF** on F.Cu
+    @(59.7000 mm, 31.0950 mm): Pad 5 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.0000 mm, 83.2500 mm): PTH pad 3 [GND] of M2
+    @(56.0000 mm, 87.0000 mm): PTH pad 6 [GND] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.0000 mm, 83.2500 mm): PTH pad 3 [GND] of M2
+    @(78.7300 mm, 65.0000 mm): PTH pad 3 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(71.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(76.5000 mm, 55.0000 mm): PTH pad 1 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.7000 mm, 48.0000 mm): Pad 2 [GND] of REF** on F.Cu
+    @(82.5000 mm, 42.0000 mm): PTH pad 3 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(76.5000 mm, 55.0000 mm): PTH pad 1 [GND] of REF**
+    @(78.7300 mm, 65.0000 mm): PTH pad 3 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(78.7300 mm, 65.0000 mm): PTH pad 3 [GND] of REF**
+    @(94.0000 mm, 83.2500 mm): PTH pad 2 [GND] of M2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(80.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(80.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(80.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(92.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(82.5000 mm, 42.0000 mm): PTH pad 3 [GND] of REF**
+    @(80.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(92.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(92.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(101.2500 mm, 80.0000 mm): PTH pad 2 [GND] of C1
+    @(94.0000 mm, 83.2500 mm): PTH pad 2 [GND] of M2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(102.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+    @(102.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(102.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(92.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(102.5000 mm, 30.5000 mm): PTH pad 4 [GND] of REF**
+    @(111.7500 mm, 42.0000 mm): PTH pad 2 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.5000 mm, 82.5000 mm): PTH pad 5 [GND] of REF**
+    @(101.2500 mm, 80.0000 mm): PTH pad 2 [GND] of C1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(107.5000 mm, 82.5000 mm): PTH pad 5 [GND] of REF**
+    @(116.5000 mm, 82.5000 mm): PTH pad 6 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(110.4600 mm, 27.0000 mm): PTH pad 1 [GND] of REF**
+    @(102.5000 mm, 25.5000 mm): PTH pad 2 [GND] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 46.1100 mm): PTH pad 27 [LCD_D4] of U3
+    @(101.5000 mm, 55.0000 mm): PTH pad 11 [LCD_D4] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 48.6500 mm): PTH pad 28 [LCD_D5] of U3
+    @(104.0000 mm, 55.0000 mm): PTH pad 12 [LCD_D5] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 51.1900 mm): PTH pad 29 [LCD_D6] of U3
+    @(106.5000 mm, 55.0000 mm): PTH pad 13 [LCD_D6] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 53.7300 mm): PTH pad 30 [LCD_D7] of U3
+    @(109.0000 mm, 55.0000 mm): PTH pad 14 [LCD_D7] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.1900 mm, 33.4100 mm): PTH pad 19 [LCD_E] of U3
+    @(89.0000 mm, 55.0000 mm): PTH pad 6 [LCD_E] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 55.0000 mm): PTH pad 16 [LCD_K] of REF**
+    @(115.5400 mm, 27.0000 mm): PTH pad 3 [LCD_K] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.1900 mm, 30.8700 mm): PTH pad 20 [LCD_RS] of U3
+    @(84.0000 mm, 55.0000 mm): PTH pad 4 [LCD_RS] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 30.8700 mm): PTH pad 21 [LCD_RW] of U3
+    @(86.5000 mm, 55.0000 mm): PTH pad 5 [LCD_RW] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(80.0000 mm, 42.0000 mm): PTH pad 2 [LCD_VO] of REF**
+    @(81.5000 mm, 55.0000 mm): PTH pad 3 [LCD_VO] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(113.7000 mm, 35.0000 mm): Pad 2 [LED_A] of REF** on F.Cu
+    @(114.2500 mm, 42.0000 mm): PTH pad 1 [LED_A] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.1900 mm, 79.1300 mm): PTH pad 1 [MCLR] of U3
+    @(73.6500 mm, 65.0000 mm): PTH pad 1 [MCLR] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(11.3000 mm, 52.0000 mm): Pad 1 [OSC1] of REF** on F.Cu
+    @(17.5400 mm, 60.0000 mm): PTH pad 2 [OSC1] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.1900 mm, 48.6500 mm): PTH pad 13 [OSC1] of U3
+    @(11.3000 mm, 52.0000 mm): Pad 1 [OSC1] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(11.3000 mm, 45.0000 mm): Pad 1 [OSC2] of REF** on F.Cu
+    @(12.4600 mm, 60.0000 mm): PTH pad 1 [OSC2] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.1900 mm, 46.1100 mm): PTH pad 14 [OSC2] of U3
+    @(11.3000 mm, 45.0000 mm): Pad 1 [OSC2] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(3.5000 mm, 85.0000 mm): PTH pad 1 [PANEL] of REF**
+    @(17.5000 mm, 85.0000 mm): Pad 1 [PANEL] of D1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(22.5000 mm, 85.0000 mm): Pad 2 [PANEL_IN] of D1 on F.Cu
+    @(34.0000 mm, 73.5000 mm): PTH pad 1 [PANEL_IN] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(34.0000 mm, 73.5000 mm): PTH pad 1 [PANEL_IN] of M1
+    @(63.3000 mm, 40.0000 mm): Pad 1 [PANEL_IN] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 76.5900 mm): PTH pad 39 [PGC] of U3
+    @(83.8100 mm, 65.0000 mm): PTH pad 5 [PGC] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(28.8100 mm, 79.1300 mm): PTH pad 40 [PGD] of U3
+    @(81.2700 mm, 65.0000 mm): PTH pad 4 [PGD] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(106.3000 mm, 27.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+    @(21.1900 mm, 43.5700 mm): PTH pad 15 [RC0_IND] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(112.3000 mm, 35.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+    @(106.3000 mm, 27.0000 mm): Pad 1 [RC0_IND] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(54.3000 mm, 32.3650 mm): Pad 3 [SHUNT_HI] of REF** on F.Cu
+    @(49.3000 mm, 30.0000 mm): Pad 1 [SHUNT_HI] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(116.5000 mm, 77.5000 mm): PTH pad 4 [SHUNT_HI] of REF**
+    @(54.3000 mm, 32.3650 mm): Pad 3 [SHUNT_HI] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(49.3000 mm, 40.0000 mm): Pad 1 [VBAT] of REF** on F.Cu
+    @(15.5040 mm, 12.0000 mm): PTH pad 1 [VBAT] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(56.0000 mm, 76.2500 mm): PTH pad 3 [VBAT] of M1
+    @(49.3000 mm, 40.0000 mm): Pad 1 [VBAT] of REF** on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(56.0000 mm, 83.7500 mm): PTH pad 4 [VBAT_NEG] of M1
+    @(92.4740 mm, 12.0000 mm): PTH pad 2 [VBAT_NEG] of REF**
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(56.0000 mm, 73.0000 mm): PTH pad 5 [VBAT_PROT] of M1
+    @(94.0000 mm, 76.8000 mm): PTH pad 1 [VBAT_PROT] of M2
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

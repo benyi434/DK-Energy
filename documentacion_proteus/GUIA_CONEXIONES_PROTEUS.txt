@@ -1,0 +1,226 @@
+// GUIA DE CONEXIONES PROTEUS 8 - DK ENERGY
+// Proyecto: Powerbank solar portátil con 18650
+// Microcontrolador: PIC16F887
+// Actualizado para modo LP (32.768kHz) y arquitectura actualizada
+
+// === PASO A PASO PARA DIBUJAR EN PROTEUS 8 ===
+
+// PASO 1: Crear nuevo proyecto
+// 1. Abrir Proteus 8 Professional
+// 2. Archivo -> Nuevo Proyecto
+// 3. Nombre: DK_Energy
+// 4. En la ventana principal, hacer clic en 'Schematic Capture' (o presionar P)
+// 5. Archivo -> Guardar como -> DK_Energy.pdsprj
+
+// PASO 2: Agregar componentes al esquema
+// Usar el selector de componentes (tecla P) y buscar cada uno:
+
+// 1. PIC16F887
+//    - Dispositivos -> Microchip tools -> PIC16F887
+//    - Posicionar en el centro del esquema
+//    - Pines importantes y sus conexiones:
+//    - RA0/AN0 (pin 2) -> Divisor batería (R1=10k, R2=3.3k a masa)
+//    - RA1/AN1 (pin 3) -> Divisor panel solar
+//    - RA2/AN2 (pin 4) -> Salida LM393 (amplificador corriente)
+//    - RC0 (pin 15) -> LED verde carga (resistencia 330Ω a masa)
+//    - RC1 (pin 16) -> Botón Menú (pull-up 3.3kΩ a VCC)
+//    - RC2 (pin 17) -> Botón Teléfono (pull-up 3.3kΩ a VCC)
+//    - RC6/TX (pin 25) -> TX del UART (conector a HC-05)
+//    - RC7/RX (pin 26) -> RX del UART (conector a HC-05)
+//    - RD0 (pin 19) -> LCD Enable (E)
+//    - RD1 (pin 20) -> LCD RS (Register Select)
+//    - RD2 (pin 21) -> LCD RW (connectar a GND para solo escritura)
+//    - RD4 (pin 27) -> LCD D4 (modo 4 bits)
+//    - RD5 (pin 28) -> LCD D5
+//    - RD6 (pin 29) -> LCD D6
+//    - RD7 (pin 30) -> LCD D7
+//    - RA6/OSC2/CLKO (pin 14) -> Cristal 32.768kHz (pin 1)
+//    - RA7/OSC1/CLKI (pin 13) -> Cristal 32.768kHz (pin 2)
+//    - MCLR (pin 1) -> Libre (dejar sin conexión o con conector ICSP)
+//    - VDD (pines 11, 32) -> +5V (desde MT3608 output)
+//    - VSS (pines 12, 31) -> GND común
+
+// 2. TP4056 (cargador Li-ion)
+//    - Como NO hay modelo en Proteus, representar como BLOQUE/MÓDULO
+//    - Posicionar debajo del PIC o a la derecha
+//    - Pines del bloque (conectar manualmente):
+//    - IN+ (pin 1) -> Panel solar positivo (a través de diodo Schottky)
+//    - IN- (pin 2) -> Panel solar negativo / GND común
+//    - BAT+ (pin 3/5) -> Terminal positivo batería 18650
+//    - BAT- (pin 4) -> Terminal negativo batería / GND sistema
+//    - OUT+ (pin 5) -> MT3608 IN+ (entrada boost)
+//    - OUT- (pin 6) -> GND sistema (bat - y MT3608 IN-)
+//    - PROG (pin 7) -> Resistencia 1kΩ a masa (para 300mA carga)
+//    - CHRG (pin 8) -> LED rojo (anodo a +5V, cátodo a través de resistor)
+//    - STDBY (pin 6) -> LED verde (para cuando carga termina)
+
+// 3. MT3608 (boost step-up)
+//    - Fuente de potencia -> DC Power (5V) o bloque personalizado
+//    - Posicionar después del TP4056 en la cadena de potencia
+//    - Pines:
+//    - IN+ -> Conexión a OUT+ del TP4056 bloque
+//    - IN- -> GND sistema (misma red que TP4056 OUT-)
+//    - EN -> +5V (habilitado permanently)
+//    - FB -> Trimmed a 5.0V con resistencia potenciómetro multivuelta
+//    - OUT+ -> Conector USB-A VCC
+//    - OUT- -> GND del USB y sistema
+
+// 4. LCD 16x2 LM016L / HD44780
+//    - Dispositivos -> LCD o bloque personalizado
+//    - Posicionar a la derecha o abajo del PIC
+//    - Pines (modo 4 bits):
+//    - VSS -> GND
+//    - VDD -> +5V
+//    - VO -> Potenciómetro 10kΩ (un extremo a +5V, otro a GND, central al pin)
+//    - RS -> Pin RC1 del PIC (botón menú también podría usarse)
+//    - RW -> GND (connectar directamente, modo escritura-only)
+//    - E -> Pin RD0 del PIC
+//    - D4 -> Pin RD4 del PIC
+//    - D5 -> Pin RD5 del PIC
+//    - D6 -> Pin RD6 del PIC
+//    - D7 -> Pin RD7 del PIC
+//    - A (anodo) -> +5V (a través de resistor if needed)
+//    - K (cátodo) -> Transistor BC547 base (colector a +5V, émiter a GND)
+
+// 5. Diodo Schottky 1N5822 / SS34
+//    - Dispositivos -> Diodo -> Schottky
+//    - Posicionar entre panel y TP4056
+//    - Orientación: Ánodo (banda blanca) hacia TP4056, cátodo hacia panel
+//    - Esto evita corriente inversa del panel durante la noche
+
+// 6. Batería 18650
+//    - Dispositivos -> Battery o CELL
+//    - Posicionar después del TP4056
+//    - Pines:
+//    - + (positivo) -> BAT+ del TP4056
+//    - - (negativo) -> BAT- del TP4056 y GND sistema
+
+// 7. LM393 (amplificador corriente)
+//    - Dispositivos -> LM393 o comparador dual
+//    - Posicionar cerca del shunt resistor
+//    - Pines:
+//    - OUT (pin 1/7) -> PIC RA2/AN2 (con resistencias)
+//    - IN- (pin 2/6) -> Un extremo del shunt 0.1Ω
+//    - IN+ (pin 3/5) -> Otro extremo del shunt 0.1Ω (desde riel)
+//    - VCC (pin 8/4) -> +5V (desde MT3608)
+//    - GND (pin 4/12) -> GND sistema
+
+// 8. Resistencias y divisores:
+//    - R1 10kΩ: desde BAT+ a RA0/AN0 PIC
+//    - R2 3.3kΩ: desde punto medio divisor a GND
+//    - R3 3.3kΩ: pull-ups en botones (RB0, RB1, RB2)
+//    - R4 0.1Ω: shunt de medición corriente (en riel GND bajo)
+//    - R470kΩ: ganancia no inversora LM393 (IN- a OUTPUT)
+//    - R1kΩ: pull-up en salida colector abierto LM393
+//    - R330Ω: LED verde (ánodo a RC0 PIC, cátodo a GND por base transistor)
+//    - R1kΩ: base del transistor BC547 (colector a +5V, émiter a GND)
+//    - R10kΩ: potenciómetro contraste LCD (3 pines)
+//    - R10kΩ: pull-ups en botones B.M y B.C
+
+// 6. Botones táctiles 6×6:
+//    - B.A (Encendido): Conectar a RB0/INT del PIC (flanco descendente wake-up)
+//    - B.M (Menú): Conectar a RB1/PIC con pull-up 3.3kΩ a VCC
+//    - B.C (Teléfono): Conectar a RB2/PIC con pull-up 3.3kΩ a VCC
+
+// 7. Cristal 32.768kHz (modo LP):
+//    - Dispositivos -> Crystal/Clock
+//    - Posicionar cerca del PIC
+//    - Pines:
+//    - Pin 1 (lado lógico) -> RA7/OSC1 del PIC
+//    - Pin 2 (lado lógico) -> RA6/OSC2 del PIC
+//    - Cada pin requiere capacitor de 15pF a masa (en Proteus configurarlo)
+
+// 8. Potenciómetro 10kΩ (contraste LCD):
+//    - Posicionar cerca del LCD
+//    - Pines laterales a +5V y GND, central al pin VO del LCD
+
+// 9. Transistor BC547 (retroiluminación LCD):
+//    - Colector (C) -> +5V
+//    - Base (B) -> Resistencia 1kΩ -> PIC RC0 (o punto medio divisor)
+//    - Emisor (E) -> GND
+
+// 10. Divisor voltaje para HC-05 5V→3.3V:
+//    - Dos resistencias formando puente: 2.2kΩ y 3.3kΩ
+//    - PIC RC6/TX -> Divisor entrada -> HC-05 RXD
+//    - El otro extremo del divisor a GND
+
+// 11. Conector USB-A:
+//    - VCC (pin 1) -> MT3608 OUT+ / +5V regulado
+//    - D- (pin 2) -> No conectado o pull-up interno
+//    - D+ (pin 3) -> No conectado o pull-up interno  
+//    - GND (pin 4) -> GND sistema
+//    - SHIELD1 (pin 5) -> GND
+//    - SHIELD2 (pin 6) -> GND
+
+// PASO 3: Conectar los cables (Wire)
+// Usar la herramienta de cable (tecla W) para conectar:
+// - Panel solar positivo -> Diodo Schottky ánodo
+// - Diodo Schottly cátodo -> TP4056 IN+
+// - TP4056 BAT+ -> Batería 18650 +
+// - TP4056 BAT- -> Batería 18650 - y GND sistema
+// - TP4056 OUT+ -> MT3608 IN+
+// - MT3608 OUT+ -> Conector USB-A VCC
+// - MT3608 OUT- / GND -> GND común todas las components
+// - PIC VDD (+5V) -> +5V riel
+// - PIC VSS (GND) -> GND riel
+// - LM393 VCC -> +5V
+// - LM393 GND -> GND riel
+// - Divisor R1/R2 -> PIC RA0/AN0
+// - Shunt 0.1Ω+LM393 -> PIC RA2/AN2
+// - PIC RC6/TX -> Divisor 5V→3.3V -> HC-05 RXD
+// - HC-05 TXD -> Divisor salida -> PIC RC7/RX
+// - LCD datos D4-D7 -> PIC RD4-RD7
+// - LCD RS -> PIC RD1 (o RC1 según configuración)
+// - LCD E/RW -> PIC RD0 (E a GND para escritura-only)
+// - LCD VO -> Potenciómetro 10kΩ
+// - LED verde RC0 -> Resistencia 330Ω -> Anodo LED
+// - Transistor BC547 base -> Resistencia 1kΩ -> PIC RC0 (o punto divisor)
+// - LED cátodo (transistor emisor) -> GND
+
+// PASO 4: Configurar simulación
+// 1. Hacer clic en el PIC16F887
+// 2. En la ventana de propiedades, cargar el archivo .hex compilado
+//    - El firmware generado anteriormente (DK_ENERGY_PIC16F887_PROTEUS.hex)
+// 3. Hacer clic en el VTERM (Virtual Terminal) conectado al TX del PIC (RC6)
+// 4. Encender la simulación (botón Play)
+// 5. Deberían verse los mensajes de voltaje y porcentaje en el terminal
+// 6. Usar los botones del Proteus para simular presiones de botones
+
+// PASO 5: Elementos que NO se pueden simular en Proteus
+// - Panel solar real (reemplazar por fuente DC 5V)
+// - TP4056 (modelo eléctrico, solo bloque conceptual)
+// - HC-05 Bluetooth real (usar VTERM para ver datos UART)
+// - Carga real de celular (simular tensión en USB, no corriente)
+// - Eficiencia real del MT3608 (ver medición en multímetro virtual)
+
+// === ETIQUETAS DE RED (Nets) RECOMENDADAS ===
+// Estas etiquetas deben ponerse con la herramienta 'label' en Proteus:
+// +5V   - Riel de alimentación 5V (MT3608 output)
+// GND   - Tierra común (todos los componentes, bat -)
+// VBAT  - Tensión batería (punto entre R1 y R2 divisor)
+// PANEL_IN - Entrada panel solar (después del diodo Schottky)
+// SHUNT_HI - Lado alto del shunt 0.1Ω (al LM393 IN+)
+// ADC_BAT - Salida divisor a PIC RA0 (entre R1 y R2)
+// ADC_PANEL - Divisor panel a PIC RA1
+// ADC_CURR - Salida LM393 al PIC RA2
+// +3.3V - Salida LM2596 para alimentar HC-05 RX divisor
+// UART_TX - Línea PIC RC6/TX
+// UART_RX - Línea HC-05 TXD (con divisor)
+
+// === PARA EL INFORME TÉCNICO ===
+// Documentar cada sección del esquema tomando captura de pantalla
+// del Proteus después de completar las conexiones.
+// Listado de componentes con valores exactos:
+// - PIC16F887 con fusibles LP, NOWDT, etc.
+// - TP4056 con resistencia PROG 1kΩ (300mA)
+// - MT3608 trimmed a 5.0V SIN carga
+// - LM393 con shunt 0.1Ω y ganancia 48 (R1=470k, R2=1k)
+// - Diodo Schottky 1N5822 o SS34 (panel → TP4056)
+// - Batería 18650 1600mAh 3.7V nominal
+// - LCD 16x2 LM016L modo 4 bits
+// - Divisores: R1=10k, R2=3.3k (batería), R panel divisor similar
+// - Potenciómetro 10kΩ (contraste LCD)
+// - BC547 para retroiluminación LED
+// - Botones táctiles con pull-ups 3.3kΩ
+// - Cristal 32.768kHz con caps 15pF cada pin
+*/

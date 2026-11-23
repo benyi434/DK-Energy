@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "DK_Energy")(type "KiCad")(uri "${KIPRJMOD}/DK_Energy.pretty")(options "")(descr "Huellas DK Energy"))
+)

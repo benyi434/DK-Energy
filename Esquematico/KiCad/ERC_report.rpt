@@ -1,0 +1,123 @@
+ERC report (2026-11-20T23:25:16, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(27.94 mm, 44.45 mm): Symbol SP1 [Solar_Panel_5V]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(35.56 mm, 245.11 mm): Symbol R6 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(35.56 mm, 262.89 mm): Symbol R7 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(52.07 mm, 262.89 mm): Symbol C6 [C]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(62.23 mm, 177.80 mm): Symbol C2 [C]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(62.23 mm, 193.04 mm): Symbol C3 [C]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(64.77 mm, 44.45 mm): Symbol D1 [Schottky_3A]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(74.93 mm, 245.11 mm): Symbol R8 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(74.93 mm, 262.89 mm): Symbol R9 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(80.01 mm, 160.02 mm): Symbol X1 [Crystal_32kHz]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(91.44 mm, 262.89 mm): Symbol C7 [C]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(110.49 mm, 49.53 mm): Symbol U1 [TP4056_Module]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(110.49 mm, 95.25 mm): Symbol BT1 [Battery_18650]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(119.38 mm, 262.89 mm): Symbol R10 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(139.70 mm, 279.40 mm): Symbol R11 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(149.86 mm, 175.26 mm): Symbol U3 [PIC16F887]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(165.10 mm, 257.81 mm): Symbol U4 [LM393]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(170.18 mm, 49.53 mm): Symbol U2 [MT3608_Module]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(196.85 mm, 242.57 mm): Symbol R12 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(204.47 mm, 72.39 mm): Symbol C1 [C]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(204.47 mm, 139.70 mm): Symbol C4 [C]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(222.25 mm, 242.57 mm): Symbol R13 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(229.87 mm, 139.70 mm): Symbol C5 [C]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(240.03 mm, 219.71 mm): Symbol R1 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(240.03 mm, 237.49 mm): Symbol SW1 [SW_Push]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(242.57 mm, 257.81 mm): Symbol J3 [Conn_ICSP]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(245.11 mm, 44.45 mm): Symbol J1 [USB_A_Female]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(255.27 mm, 195.58 mm): Symbol RV1 [Pot_10k]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(265.43 mm, 219.71 mm): Symbol R2 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(265.43 mm, 237.49 mm): Symbol SW2 [SW_Push]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(290.83 mm, 219.71 mm): Symbol R3 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(290.83 mm, 237.49 mm): Symbol SW3 [SW_Push]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(299.72 mm, 165.10 mm): Symbol J2 [LCD_16x2]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(335.28 mm, 204.47 mm): Symbol D2 [LED]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(335.28 mm, 223.52 mm): Symbol R4 [R]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(361.95 mm, 195.58 mm): Symbol Q1 [BC547]
+[footprint_link_issues]: La configuración actual no incluye la biblioteca de huellas 'DK_Energy'
+    ; warning
+    @(361.95 mm, 215.90 mm): Symbol R5 [R]
+
+ ** ERC messages: 37  Errors 0  Warnings 37
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters
