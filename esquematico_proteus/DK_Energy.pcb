@@ -1,0 +1,93 @@
+// PCB DK ENERGY en Proteus 8
+// Diseño de 150mm x 100mm (15x10 cm)
+// Componentes dispuestos y listos para enrutar
+
+// Capa F.Cu (Cobre superior)
+// Componentes y rutas a colocar
+
+// Posicionamiento de componentes (en milímetros):
+// Los componentes ya tienen sus posiciones definidas en el esquema
+// Pero para el PCB, los reorganizamos en una disposición lógica:
+
+// Fila superior (potencia):
+// - SP1 (Panel solar) - posición: (5, 95)
+// - D1 (Schottky) - posición: (25, 95)
+// - U1 (TP4056) - posición: (45, 90)
+// - BT1 (Batería) - posición: (65, 90)
+// - U2 (MT3608) - posición: (85, 90)
+// - C1 (Capacitor 100uF) - posición: (105, 90)
+// - J1 (USB-A) - posición: (115, 90)
+
+// Fila media (control):
+// - U3 (PIC16F887) - posición: (20, 55)
+// - X1 (Cristal 32kHz) - posición: (15, 60)
+// - C2, C3 (Capacitores 15pF) - posición: (12, 52 y 12, 45)
+// - C4, C5 (Capacitores 100nF) - posición: (35, 60 y 40, 60)
+// - J2 (LCD 16x2) - posición: (95, 55)
+// - RV1 (Potenciómetro) - posición: (80, 42)
+
+// Fila inferior (botones y medición):
+// - SW1 (B.A) - posición: (78, 28)
+// - SW2 (B.M) - posición: (90, 28)
+// - SW3 (B.C) - posición: (100, 28)
+// - R1, R2, R3 (Resistencias 3.3k) - posición: (78, 38), (90, 38), (100, 38)
+// - D2 (LED) - posición: (113, 42)
+// - R4 (330Ω) - posición: (113, 35)
+// - Q1 (BC547) - posición: (113, 27)
+// - R5 (1kΩ) - posición: (108, 27)
+
+// Poder y GND:
+// - R6 (10kΩ) - posición: (50, 40)
+// - R7 (10kΩ) - posición: (50, 48)
+// - C6 (Capacitor 100nF) - posición: (57, 48)
+// - R8 (10kΩ) - posición: (64, 40)
+// - R9 (10kΩ) - posición: (64, 48)
+// - C7 (Capacitor 100nF) - posición: (71, 48)
+// - R10 (0.1Ω shunt) - posición: (50, 30)
+// - U4 (LM393) - posición: (56, 33)
+// - R11 (10kΩ) - posición: (50, 26)
+// - R12 (470kΩ) - posición: (64, 28)
+// - R13 (1kΩ) - posición: (70, 28)
+// - J3 (ICSP) - posición: (80, 65)
+
+// Zona de alimentación:
+// - +5V distribuido a componentes seleccionados
+// - GND común en toda la placa
+// - Zona de tierra en capa posterior
+
+// Dimension de placa: 150mm x 100mm (15x10 cm)
+// agujeros de montaje M3 en las esquinas:
+// - (5, 5), (145, 5), (5, 95), (145, 95)
+
+// Capas a considerar:
+// F.Cu - Capa de cobre superior
+// B.Cu - Capa de cobre inferior  
+// Edge.Corts - Contorno de la placa
+// F.SilkS - Serigrafía componente
+// B.SilkS - Serigrafía invertida
+
+// NOTAS:
+// - Los componentes ya tienen sus pads y pies definidos
+// - Los señales críticas (potencia, GND) deben mantener rutas anchas
+// - Las señales de baja señal pueden ser delgadas
+// - Los agujeros de vía (via) donde cruzan señales deben usarse
+// - El shunt R10 (0.1Ω) debe tener rutas de cobre ancho para minimizar resistencia
+
+// Para enrutar en Proteus:
+// 1. Abrir el archivo .pcb en Proteus
+// 2. Usar la herramienta de enrutado (Route)
+// 3. Seguir las redes etiquetadas en el esquemático
+// 4. DRC (Reglas de Diseño) verificará clearingances
+// 5. Generar archivos Gerber para fabricación
+
+// Componentes y redes críticos a enrutar primero:
+// - Alimentación +5V desde MT3608 hasta USB y lógica
+// - Tierra (GND) red común
+// - Shunt R10 + LM393 para medición de corriente
+// - Divisores R1/R2 para ADC del PIC
+// - Líneas UART PIC RC6/TX y RC7/RX al HC-05
+// - Líneas LCD D4-D7, RS, E al PIC
+// - Líneas de botones al PIC
+
+// El usuario debe enrutar utilizando las redes definidas en el esquema
+// Proteus calcula automáticamente las longitudes y clearingances

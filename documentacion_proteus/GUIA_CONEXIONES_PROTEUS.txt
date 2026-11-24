@@ -224,3 +224,9 @@
 // - Botones táctiles con pull-ups 3.3kΩ
 // - Cristal 32.768kHz con caps 15pF cada pin
 */
+
+
+=== DISPOSICIÓN DEL PCB PROTEUS ===
+Diseño de placa 150mm x 100mm (15x10 cm)
+Componentes dispuestos en filas lógicas para enrutado.
+Ver archivo DK_Energy.pcb para ver la disposición exacta.
