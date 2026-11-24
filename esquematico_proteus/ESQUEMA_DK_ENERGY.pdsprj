@@ -1,50 +1,26 @@
 // Proteus 8 Project File
-// DK Energy Powerbank Project
-// Formato nativo de Proteus 8.13 SP0
+// DK Energy Powerbank
+// Versión mínima para carga
 
 [PROJECT]
-Name=DK Energy Powerbank
+Name=DK Energy
 Version=8.13
-Author=Benjamin Rincon
-Date=2026-11-20
+Author=Benjamin
 
 [SCHEMATIC_PAGES]
 PageCount=1
 Page1=
-  SymbolCount=7
-  NetCount=33
+  SymbolCount=0
+  NetCount=0
   Hierarchical=0
 
 [SYMBOLS]
-1=PIC16F887,Microcontroller,14,15,13,1,32,31,26,25,4,5,6,7,8,9,10,11,12
-2=TP4056,ChargerModule,10,5,4,3,2,1,8,7,6,9,11,12,13
-3=MT3608,BoostConverter,14,1,12,13,11,3,2,4,5,6,7,8,9,10,14
-7=LM393,Comparator,14,1,2,3,4,5,6,7,8,9,10,11,12,13,14
-7=Schottky1N5822,Diode,2,1
 
 [NETS]
-NetCount=33
-Net1=+5V
-Net2=GND
-Net3=VBAT
-Net4=PANEL_IN
-Net5=SHUNT_HI
-Net5=VBAT_NEG
-Net6=VBAT_PROT
-Net7=AMP_FB
-Net8=ADC_BAT
-Net9=ADC_PANEL
-Net10=ADC_CURR
-Net11=SHUNT_HI
-Net12=GND
-Net13=+5V
+NetCount=0
 
 [DESIGN_RULES]
 Grid=0.05
 Units=Metric
-
-[SIMULATION]
-TimeEnd=100m
-Timestep=1u
 
 [/PROJECT]
