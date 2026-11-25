@@ -1,0 +1,379 @@
+#include <16F887.h>
+#device ADC=10
+#fuses LP, NOWDT, NOPROTECT, NOLVP, NOBROWNOUT, PUT
+#use delay(clock=32768)
+
+#use fast_io(A)
+#use fast_io(B)
+#use fast_io(C)
+#use fast_io(D)
+
+#define LCD_ENABLE_PIN  PIN_D0
+#define LCD_RS_PIN      PIN_D1
+#define LCD_RW_PIN      PIN_D2
+#define LCD_DATA4       PIN_D4
+#define LCD_DATA5       PIN_D5
+#define LCD_DATA6       PIN_D6
+#define LCD_DATA7       PIN_D7
+
+#include <lcd.c>
+
+void main()
+{
+   long adc_bateria=0, adc_solar=0;
+   long inactividad=0, tiempo_muestra=0;
+
+   int16 mv_bat=3000, mv_anterior=3000;
+   int16 mv_bat_lcd_anterior=65535;
+   int16 diferencia=0;
+
+   int porcentaje=0, tensionsol=0;
+   int menu=0, reb1=0, reb2=0;
+   int animacion=0, tiempoanim=0;
+
+   int porcent_anterior=255;
+   int tensionsol_anterior=255;
+
+   short pantalla=1, cargando=0;
+   short canal_bateria=1;
+   short botonmenu=1, botontelefono=1;
+   short Even1=0, Even2=0;
+   short redibujar=1;
+   short primera_muestra=1;
+   short bajando=0, subiendo=0;
+
+   set_tris_a(0b00000011);
+   set_tris_b(0b11111110);
+   set_tris_c(0b11111110);
+   set_tris_d(0b00000000);
+
+   output_low(PIN_C0);
+   output_low(PIN_B0);
+
+   setup_adc_ports(sAN0 | sAN1 | VSS_VDD);
+   setup_adc(ADC_CLOCK_INTERNAL);
+   set_adc_channel(0);
+   delay_us(20);
+
+   lcd_init();
+   output_high(PIN_B0);
+
+   while(TRUE)
+   {
+      // Lectura de bateria y panel solar
+      if(canal_bateria==1)
+      {
+         set_adc_channel(0);
+         delay_us(20);
+         adc_bateria=read_adc();
+
+         set_adc_channel(1);
+         delay_us(20);
+         canal_bateria=0;
+      }
+      else
+      {
+         adc_solar=read_adc();
+
+         set_adc_channel(0);
+         delay_us(20);
+         canal_bateria=1;
+      }
+
+      // PORCENTAJE DE BATERIA
+      // El potenciometro va de 0 V a 3,7 V.
+      // Con VDD=5 V, el ADC llega aproximadamente a 757.
+      porcentaje=((int32)adc_bateria*100)/757;
+
+      if(porcentaje>100)
+         porcentaje=100;
+
+      // TENSION SIMULADA DE LA BATERIA
+      // 0% = 3,0 V
+      // 50% = 3,7 V
+      // 100% = 4,2 V
+      if(porcentaje<=50)
+         mv_bat=3000+((int32)porcentaje*14);
+      else
+         mv_bat=3700+((int32)(porcentaje-50)*10);
+
+      // CALCULO DEL PANEL SOLAR: SIN CAMBIOS
+      tensionsol=((int32)adc_solar*50)/1023;
+
+      // Comparacion de la tension de bateria
+      tiempo_muestra++;
+
+      if(tiempo_muestra>=1000)
+      {
+         tiempo_muestra=0;
+
+         if(primera_muestra==1)
+         {
+            mv_anterior=mv_bat;
+            primera_muestra=0;
+         }
+         else
+         {
+            if(mv_bat>mv_anterior)
+               diferencia=mv_bat-mv_anterior;
+            else
+               diferencia=mv_anterior-mv_bat;
+
+            if(diferencia>20)
+            {
+               if(mv_bat<mv_anterior)
+               {
+                  bajando=1;
+                  subiendo=0;
+               }
+               else
+               {
+                  subiendo=1;
+                  bajando=0;
+               }
+            }
+            else
+            {
+               bajando=0;
+               subiendo=0;
+            }
+
+            mv_anterior=mv_bat;
+         }
+      }
+
+      // Boton de menu
+      if(input(PIN_C1)==0)
+      {
+         if(reb1<1)reb1++;
+
+         if(reb1>=1 && botonmenu==1)
+         {
+            Even1=1;
+            botonmenu=0;
+         }
+      }
+      else
+      {
+         reb1=0;
+         botonmenu=1;
+      }
+
+      // Boton de conexion del telefono
+      if(input(PIN_C2)==0)
+      {
+         if(reb2<1)reb2++;
+
+         if(reb2>=1 && botontelefono==1)
+         {
+            Even2=1;
+            botontelefono=0;
+         }
+      }
+      else
+      {
+         reb2=0;
+         botontelefono=1;
+      }
+
+      // Cambio de menu y encendido de pantalla
+      if(Even1==1)
+      {
+         inactividad=0;
+
+         if(pantalla==0)
+         {
+            pantalla=1;
+            menu=0;
+            output_high(PIN_B0);
+         }
+         else
+         {
+            menu++;
+
+            if(menu>3)menu=0;
+         }
+
+         redibujar=1;
+         Even1=0;
+      }
+
+      // Conexion y desconexion del telefono
+      if(Even2==1)
+      {
+         inactividad=0;
+         cargando=!cargando;
+         pantalla=1;
+         menu=1;
+         output_high(PIN_B0);
+         animacion=0;
+         tiempoanim=0;
+         redibujar=1;
+         Even2=0;
+      }
+
+      // Dibujo inicial de cada menu
+      if(redibujar==1 && pantalla==1)
+      {
+         lcd_putc('\f');
+
+         switch(menu)
+         {
+            case 0:
+               printf(lcd_putc,"   DK ENERGY");
+               printf(lcd_putc,"\n  POWER BANK");
+               break;
+
+            case 1:
+               printf(lcd_putc,"BATERIA: %u%%",porcentaje);
+
+               if(cargando==1)
+                  printf(lcd_putc,"\nCARGANDO");
+               else if(bajando==1)
+                  printf(lcd_putc,"\nTENSION BAJANDO");
+               else if(subiendo==1)
+                  printf(lcd_putc,"\nTENSION SUBIENDO");
+               else
+                  printf(lcd_putc,"\nEN ESPERA");
+               break;
+
+            case 2:
+               printf(lcd_putc,"ESTADO BATERIA");
+               lcd_gotoxy(1,2);
+               lcd_putc((mv_bat/1000)+'0');
+               lcd_putc('.');
+               lcd_putc(((mv_bat%1000)/100)+'0');
+               lcd_putc(' ');
+               lcd_putc('V');
+
+               mv_bat_lcd_anterior=mv_bat;
+               break;
+
+            case 3:
+               printf(lcd_putc,"PANEL SOLAR");
+               printf(lcd_putc,"\n%u.%uV ",
+                      tensionsol/10,tensionsol%10);
+
+               if(tensionsol>=35)
+                  printf(lcd_putc,"ACTIVA");
+               else
+                  printf(lcd_putc,"BAJA");
+               break;
+         }
+
+         porcent_anterior=porcentaje;
+         tensionsol_anterior=tensionsol;
+         redibujar=0;
+      }
+
+      // Actualiza la tension en ESTADO BATERIA
+      if(pantalla==1 && menu==2 &&
+         mv_bat!=mv_bat_lcd_anterior)
+      {
+         lcd_gotoxy(1,2);
+         lcd_putc((mv_bat/1000)+'0');
+         lcd_putc('.');
+         lcd_putc(((mv_bat%1000)/100)+'0');
+         lcd_putc(' ');
+         lcd_putc('V');
+
+         mv_bat_lcd_anterior=mv_bat;
+      }
+
+      // LED verde mientras el telefono esta conectado
+      if(cargando==1)
+         output_high(PIN_C0);
+      else
+         output_low(PIN_C0);
+
+      // Animacion de carga
+      if(cargando==1)
+      {
+         tiempoanim++;
+
+         if(tiempoanim>=3)
+         {
+            tiempoanim=0;
+            animacion++;
+
+            if(animacion>3)animacion=0;
+
+            if(pantalla==1 && menu==1)
+            {
+               lcd_gotoxy(1,2);
+
+               switch(animacion)
+               {
+                  case 0:
+                     printf(lcd_putc,"CARGANDO        ");
+                     break;
+
+                  case 1:
+                     printf(lcd_putc,"CARGANDO.       ");
+                     break;
+
+                  case 2:
+                     printf(lcd_putc,"CARGANDO..      ");
+                     break;
+
+                  case 3:
+                     printf(lcd_putc,"CARGANDO...     ");
+                     break;
+               }
+            }
+         }
+      }
+      else
+      {
+         tiempoanim=0;
+         animacion=0;
+      }
+
+      // Actualiza el porcentaje en BATERIA
+      if(pantalla==1 && menu==1 &&
+         porcentaje!=porcent_anterior)
+      {
+         lcd_gotoxy(1,1);
+         printf(lcd_putc,"                ");
+         lcd_gotoxy(1,1);
+         printf(lcd_putc,"BATERIA: %u%%",porcentaje);
+
+         porcent_anterior=porcentaje;
+      }
+
+      // Actualiza el panel solar: SIN CAMBIOS
+      if(pantalla==1 && menu==3 &&
+         tensionsol!=tensionsol_anterior)
+      {
+         lcd_gotoxy(1,2);
+         printf(lcd_putc,"                ");
+         lcd_gotoxy(1,2);
+
+         printf(lcd_putc,"%u.%uV ",
+                tensionsol/10,tensionsol%10);
+
+         if(tensionsol>=35)
+            printf(lcd_putc,"ACTIVA");
+         else
+            printf(lcd_putc,"BAJA");
+
+         tensionsol_anterior=tensionsol;
+      }
+
+      // Apagado automatico de pantalla
+      if(pantalla==1)
+      {
+         if(inactividad<35)
+            inactividad++;
+
+         if(inactividad>=35)
+         {
+            pantalla=0;
+            lcd_putc('\f');
+            output_low(PIN_B0);
+         }
+      }
+
+      delay_ms(1);
+   }
+}

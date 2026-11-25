@@ -1,0 +1,253 @@
+
+#include <16F887.h>
+
+#fuses INTRC_IO, NOWDT, NOPROTECT, NOLVP, NOBROWNOUT, PUT
+#use delay(clock=4000000)
+
+#use fast_io(A)
+#use fast_io(B)
+#use fast_io(C)
+#use fast_io(D)
+
+// LCD 16x2
+#define LCD_ENABLE_PIN  PIN_D0
+#define LCD_RS_PIN      PIN_D1
+#define LCD_RW_PIN      PIN_D2
+#define LCD_DATA4       PIN_D4
+#define LCD_DATA5       PIN_D5
+#define LCD_DATA6       PIN_D6
+#define LCD_DATA7       PIN_D7
+
+#include <lcd.c>
+
+// Entradas y salida
+#define LED_VERDE       PIN_C0
+#define BTN_DESPERTAR   PIN_C1
+#define BTN_TELEFONO    PIN_C2
+
+// Tiempos aproximados en milisegundos
+#define APAGADO_MS      15000
+#define DEBOUNCE_MS     25
+#define ANIM_MS         250
+#define BATERIA_MS      60000
+
+// Estado del sistema
+int1 pantalla_encendida = 1;
+int1 telefono_cargando = 0;
+
+int8 bateria = 78;
+int8 animacion = 0;
+
+int16 inactividad = 0;
+int16 tiempo_anim = 0;
+int16 tiempo_bateria = 0;
+
+int8 debounce_despertar = 0;
+int8 debounce_telefono = 0;
+
+int1 despertar_anterior = 1;
+int1 telefono_anterior = 1;
+
+int1 evento_despertar = 0;
+int1 evento_telefono = 0;
+
+
+// Muestra el porcentaje de bateria
+void mostrar_bateria(void)
+{
+   lcd_gotoxy(1,1);
+   printf(lcd_putc, "                ");
+   lcd_gotoxy(1,1);
+   printf(lcd_putc, "BATERIA PB: %u%%", bateria);
+}
+
+
+// Actualiza solamente la segunda linea
+void mostrar_estado(void)
+{
+   lcd_gotoxy(1,2);
+
+   if(telefono_cargando)
+   {
+      switch(animacion)
+      {
+         case 0:
+            printf(lcd_putc, "CARGANDO        ");
+            break;
+
+         case 1:
+            printf(lcd_putc, "CARGANDO.       ");
+            break;
+
+         case 2:
+            printf(lcd_putc, "CARGANDO..      ");
+            break;
+
+         default:
+            printf(lcd_putc, "CARGANDO...     ");
+            break;
+      }
+   }
+   else
+   {
+      printf(lcd_putc, "EN ESPERA       ");
+   }
+}
+
+
+// Actualiza las dos lineas
+void actualizar_pantalla(void)
+{
+   lcd_putc('\f');
+   mostrar_bateria();
+   mostrar_estado();
+}
+
+
+void main(void)
+{
+   set_tris_a(0xFF);
+   set_tris_b(0xFF);
+   set_tris_c(0b11111110);
+   set_tris_d(0x00);
+
+   output_low(LED_VERDE);
+
+   lcd_init();
+   actualizar_pantalla();
+
+   while(TRUE)
+   {
+      evento_despertar = 0;
+      evento_telefono = 0;
+
+      // Boton para despertar el LCD
+      if(input(BTN_DESPERTAR) == 0)
+      {
+         if(debounce_despertar < DEBOUNCE_MS)
+            debounce_despertar++;
+
+         if((debounce_despertar == DEBOUNCE_MS) &&
+            (despertar_anterior == 1))
+         {
+            evento_despertar = 1;
+            despertar_anterior = 0;
+         }
+      }
+      else
+      {
+         debounce_despertar = 0;
+         despertar_anterior = 1;
+      }
+
+      // Boton que simula conectar/desconectar el telefono
+      if(input(BTN_TELEFONO) == 0)
+      {
+         if(debounce_telefono < DEBOUNCE_MS)
+            debounce_telefono++;
+
+         if((debounce_telefono == DEBOUNCE_MS) &&
+            (telefono_anterior == 1))
+         {
+            evento_telefono = 1;
+            telefono_anterior = 0;
+         }
+      }
+      else
+      {
+         debounce_telefono = 0;
+         telefono_anterior = 1;
+      }
+
+      // Despertar manualmente la pantalla
+      if(evento_despertar)
+      {
+         inactividad = 0;
+
+         if(!pantalla_encendida)
+         {
+            pantalla_encendida = 1;
+            actualizar_pantalla();
+         }
+      }
+
+      // Simular la conexion o desconexion del telefono
+      if(evento_telefono)
+      {
+         telefono_cargando = !telefono_cargando;
+         inactividad = 0;
+
+         if(telefono_cargando)
+         {
+            // Al conectar, despertar el LCD
+            pantalla_encendida = 1;
+            animacion = 0;
+            tiempo_anim = 0;
+            tiempo_bateria = 0;
+         }
+         else
+         {
+            // Al desconectar, detener animacion y consumo simulado
+            animacion = 0;
+            tiempo_anim = 0;
+            tiempo_bateria = 0;
+         }
+
+         if(pantalla_encendida)
+            actualizar_pantalla();
+      }
+
+      // LED independiente del estado del LCD
+      if(telefono_cargando)
+         output_high(LED_VERDE);
+      else
+         output_low(LED_VERDE);
+
+      // Animacion solo mientras el telefono carga
+      if(telefono_cargando)
+      {
+         tiempo_anim++;
+
+         if(tiempo_anim >= ANIM_MS)
+         {
+            tiempo_anim = 0;
+            animacion++;
+
+            if(animacion > 3)
+               animacion = 0;
+
+            if(pantalla_encendida)
+               mostrar_estado();
+         }
+
+         // Descenso simulado del porcentaje de bateria
+         tiempo_bateria++;
+
+         if(tiempo_bateria >= BATERIA_MS)
+         {
+            tiempo_bateria = 0;
+
+            if(bateria > 0)
+               bateria--;
+
+            if(pantalla_encendida)
+               mostrar_bateria();
+         }
+      }
+
+      // Apagado automatico del LCD por inactividad
+      if(pantalla_encendida)
+      {
+         if(inactividad < APAGADO_MS)
+            inactividad++;
+
+         if(inactividad >= APAGADO_MS)
+         {
+            pantalla_encendida = 0;
+            lcd_putc('\f');
+         }
+      }
+
+      delay_ms(1);
+   }
+}

@@ -1,0 +1,181 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-021 @sprintf_string
+022-023 MAIN.adc_bateria
+024-025 MAIN.adc_solar
+026-027 MAIN.adc_Abateria
+028-029 MAIN.inactividad
+02A-02B MAIN.tiempo_muestra
+02C-02D MAIN.mv_bat
+02E-02F MAIN.mv_anterior
+030-031 MAIN.mv_bat_lcd_anterior
+032-033 MAIN.diferencia
+034     MAIN.porcentaje
+035     MAIN.tensionsol
+036     MAIN.menu
+037     MAIN.reb1
+038     MAIN.reb2
+039     MAIN.animacion
+03A     MAIN.tiempoanim
+03B     MAIN.porcent_anterior
+03C     MAIN.tensionsol_anterior
+03D-03E MAIN.contador_power
+03F.0   MAIN.pantalla
+03F.1   MAIN.cargando
+03F.2   MAIN.canal_bateria
+03F.3   MAIN.botonmenu
+03F.4   MAIN.botontelefono
+03F.5   MAIN.Even1
+03F.6   MAIN.Even2
+03F.7   MAIN.redibujar
+040.0   MAIN.primera_muestra
+040.1   MAIN.bajando
+040.2   MAIN.subiendo
+040.3   MAIN.encendido
+040.4   MAIN.power_listo
+041     lcd_init.i
+041-042 @PRINTF_LU_668.P1
+041     MAIN.@SCRATCH1
+041     @PSTRINGC7_668.@SCRATCH1
+042-045 lcd_init.LCD_INIT_STRING
+042     MAIN.@SCRATCH2
+042     @PSTRINGC7_668.@SCRATCH2
+043     @PRINTF_U_668.P1
+043-044 @DIV1616.P2
+043     MAIN.@SCRATCH3
+043     @PSTRINGC7_668.@SCRATCH3
+043     @PRINTF_LU_668.@SCRATCH1
+044     @PRINTF_U_668.P1
+044     MAIN.@SCRATCH4
+044     @PSTRINGC7_668.@SCRATCH4
+044     @PRINTF_LU_668.@SCRATCH2
+045-048 @MUL3232.P1
+045     @DIV88.P2
+045-048 @DIV3232.P3
+045-046 @DIV1616.P4
+045     @PRINTF_LU_668.@SCRATCH3
+046     @DIV88.P1
+046     lcd_init.@SCRATCH1
+046     @PRINTF_LU_668.@SCRATCH4
+047     @DIV1616.@SCRATCH1
+047     @PRINTF_LU_668.@SCRATCH5
+047     @DIV88.@SCRATCH1
+048     @PRINTF_LU_668.@SCRATCH6
+049-04C @DIV3232.P1
+049-04C @MUL3232.P2
+049     @PRINTF_LU_668.@SCRATCH7
+04A     lcd_putc.c
+04B     lcd_gotoxy.x
+04C     lcd_gotoxy.y
+04D     lcd_gotoxy.address
+04D     @MUL3232.@SCRATCH1
+04D     @DIV3232.@SCRATCH1
+04E     lcd_gotoxy.@SCRATCH1
+04E     @MUL3232.@SCRATCH2
+04E     @DIV3232.@SCRATCH2
+04F     lcd_send_byte.address
+04F     @MUL3232.@SCRATCH3
+04F     @DIV3232.@SCRATCH3
+050     lcd_send_byte.n
+050     @MUL3232.@SCRATCH4
+050     @DIV3232.@SCRATCH4
+051     lcd_read_byte.low
+051     lcd_send_byte.@SCRATCH1
+051     @MUL3232.@SCRATCH5
+051     @DIV3232.@SCRATCH5
+052     lcd_read_byte.high
+052     lcd_send_nibble.n
+053     lcd_read_nibble.n
+053     lcd_read_byte.@SCRATCH1
+054     lcd_read_nibble.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const721.call
+00000B  @const726.call
+000012  @const727.call
+000017  @const728.call
+00001C  @const729.call
+000025  @const730.call
+00002E  @const731.call
+000034  @const732.call
+00003C  @const739.call
+000042  @const747.call
+000046  @const748.call
+000049  @const751.call
+000052  @const752.call
+00005B  @const753.call
+000064  @const754.call
+00006D  @const756.call
+000076  @const758.call
+00007A  @const759.call
+00007D  lcd_send_nibble
+000095  lcd_read_nibble
+0000BA  lcd_send_byte
+0000C0  lcd_read_byte
+0000FC  lcd_init
+00013F  @MUL3232
+000169  @DIV3232
+0001B8  lcd_gotoxy
+0001CA  lcd_putc
+0001F7  @PSTRINGC7_668
+00024D  @DIV1616
+000272  @PRINTF_LU_668
+0002D5  @DIV88
+0002EA  @PRINTF_U_668
+00031F  @cinit1
+00031F  MAIN
+000333  @cinit2
+000751  @goto15425
+000759  @goto15502
+
+Project Directory:
+    F:\7A\RinconVenencia\PROYECTO INTEGRADOR\DK Energy\DkEnergyConLCD\Pic C Codigo\
+
+Project Files:
+    DkEnergy Codigo.c                                       [05-nov.-26 22:39  CRC=D4B93CDD]
+    C:\Program Files (x86)\PICC\Devices\16F887.h            [15-ene.-18 15:53  CRC=9C71CB72]
+    C:\Program Files (x86)\PICC\Drivers\lcd.c               [22-feb.-16 09:05  CRC=D1A6378A]
+
+Source signature=14777763
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=3C70
+
+Units:
+    DkEnergy Codigo (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   DkEnergy Codigo.xsym
+    Errors:      DkEnergy Codigo.err
+    Ext Symbols: DkEnergy Codigo.esym
+    INHX8:       DkEnergy Codigo.hex
+    Symbols:     DkEnergy Codigo.sym
+    List:        DkEnergy Codigo.lst
+    Debug/COFF:  DkEnergy Codigo.cof
+    Project:     DkEnergy Codigo.ccspjt
+    Call Tree:   DkEnergy Codigo.tre
+    Statistics:  DkEnergy Codigo.STA

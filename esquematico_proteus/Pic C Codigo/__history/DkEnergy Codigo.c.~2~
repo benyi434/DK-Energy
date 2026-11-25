@@ -1,0 +1,231 @@
+
+#include <16F887.h>
+
+#fuses INTRC_IO, NOWDT, NOPROTECT, NOLVP, NOBROWNOUT, PUT
+#use delay(clock=4000000)
+
+#use fast_io(A)
+#use fast_io(B)
+#use fast_io(C)
+#use fast_io(D)
+
+// LCD 16x2
+#define LCD_ENABLE_PIN  PIN_D0
+#define LCD_RS_PIN      PIN_D1
+#define LCD_RW_PIN      PIN_D2
+#define LCD_DATA4       PIN_D4
+#define LCD_DATA5       PIN_D5
+#define LCD_DATA6       PIN_D6
+#define LCD_DATA7       PIN_D7
+
+#include <lcd.c>
+
+// Puerto C
+#define LED_VERDE       PIN_C0
+#define BTN_MENU        PIN_C1
+#define BTN_CARGA       PIN_C2
+
+// Temporizacion (ms)
+#define APAGADO_MS      15000
+#define DEBOUNCE_MS     25
+#define ANIM_MS         250
+
+int1 pantalla_encendida = 1;
+int1 carga_simulada = 0;
+
+int8 menu = 0;
+int8 bateria = 78;
+int8 animacion = 0;
+
+int16 inactividad = 0;
+int16 tiempo_anim = 0;
+int16 tiempo_muestreo = 0;
+
+int8 debounce_menu = 0;
+int8 debounce_carga = 0;
+
+int1 menu_anterior = 1;
+int1 carga_anterior = 1;
+
+int1 evento_menu = 0;
+int1 evento_carga = 0;
+
+// ----------------------------------
+// Actualizar pantalla
+// ----------------------------------
+void mostrar_menu(void)
+{
+   lcd_putc('\f');
+
+   switch(menu)
+   {
+      case 0:
+         printf(lcd_putc, "    DK ENERGY");
+         printf(lcd_putc, "\n  POWER BANK");
+         break;
+
+      case 1:
+         if(animacion == 0)
+            printf(lcd_putc, "CARGANDO       ");
+         else if(animacion == 1)
+            printf(lcd_putc, "CARGANDO.      ");
+         else if(animacion == 2)
+            printf(lcd_putc, "CARGANDO..     ");
+         else
+            printf(lcd_putc, "CARGANDO...    ");
+
+         printf(lcd_putc, "\nUSB: %s",
+                carga_simulada ? "ACTIVO" : "INACTIVO");
+         break;
+
+      case 2:
+         printf(lcd_putc, "BATERIA: %u%%", bateria);
+         printf(lcd_putc, "\nNivel de prueba");
+         break;
+
+      case 3:
+         printf(lcd_putc, "ENTRADA SOLAR");
+         printf(lcd_putc, "\n4.8V SIMULADOS");
+         break;
+
+      case 4:
+         printf(lcd_putc, "SALIDA USB");
+         printf(lcd_putc, "\n%s",
+                carga_simulada ? "CARGA ACTIVA" :
+                                 "SIN CONSUMO");
+         break;
+   }
+}
+
+// ----------------------------------
+// Programa principal
+// ----------------------------------
+void main(void)
+{
+   // RC0 salida; RC1 y RC2 entradas
+   set_tris_c(0b11111110);
+
+   // Resto de puertos como entradas inicialmente
+   set_tris_a(0xFF);
+   set_tris_b(0xFF);
+   set_tris_d(0x00);
+
+   output_low(LED_VERDE);
+
+   lcd_init();
+   lcd_putc('\f');
+
+   mostrar_menu();
+
+   while(TRUE)
+   {
+      evento_menu = 0;
+      evento_carga = 0;
+
+      // Lectura y antirrebote del boton de menu
+      if(input(BTN_MENU) == 0)
+      {
+         if(debounce_menu < DEBOUNCE_MS)
+            debounce_menu++;
+
+         if((debounce_menu == DEBOUNCE_MS) &&
+            (menu_anterior == 1))
+         {
+            evento_menu = 1;
+            menu_anterior = 0;
+         }
+      }
+      else
+      {
+         debounce_menu = 0;
+         menu_anterior = 1;
+      }
+
+      // Lectura y antirrebote del boton de carga
+      if(input(BTN_CARGA) == 0)
+      {
+         if(debounce_carga < DEBOUNCE_MS)
+            debounce_carga++;
+
+         if((debounce_carga == DEBOUNCE_MS) &&
+            (carga_anterior == 1))
+         {
+            evento_carga = 1;
+            carga_anterior = 0;
+         }
+      }
+      else
+      {
+         debounce_carga = 0;
+         carga_anterior = 1;
+      }
+
+      // Actividad del usuario
+      if(evento_menu || evento_carga)
+      {
+         inactividad = 0;
+
+         if(!pantalla_encendida)
+         {
+            pantalla_encendida = 1;
+            mostrar_menu();
+         }
+         else if(evento_menu)
+         {
+            menu++;
+
+            if(menu > 4)
+               menu = 0;
+
+            mostrar_menu();
+         }
+         else if(evento_carga)
+         {
+            // Modo de prueba: simular consumo USB
+            carga_simulada = !carga_simulada;
+
+            if(menu == 1 || menu == 4)
+               mostrar_menu();
+         }
+      }
+
+      // LED verde: carga simulada activa
+      if(carga_simulada)
+         output_high(LED_VERDE);
+      else
+         output_low(LED_VERDE);
+
+      // Animacion de la pantalla CARGANDO
+      tiempo_anim++;
+
+      if(tiempo_anim >= ANIM_MS)
+      {
+         tiempo_anim = 0;
+
+         animacion++;
+
+         if(animacion > 3)
+            animacion = 0;
+
+         if(pantalla_encendida && menu == 1)
+            mostrar_menu();
+      }
+
+      // Apagado automatico tras 15 segundos
+      if(pantalla_encendida)
+      {
+         if(inactividad < APAGADO_MS)
+            inactividad++;
+
+         if(inactividad >= APAGADO_MS)
+         {
+            pantalla_encendida = 0;
+            lcd_putc('\f');
+            output_low(LED_VERDE);
+         }
+      }
+
+      // Unico retardo del programa
+      delay_ms(1);
+   }
+}
