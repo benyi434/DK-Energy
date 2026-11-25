@@ -1,0 +1,358 @@
+
+#include <16F887.h>
+
+#fuses INTRC_IO, NOWDT, NOPROTECT, NOLVP, NOBROWNOUT, PUT
+#use delay(clock=4000000)
+
+#use fast_io(A)
+#use fast_io(B)
+#use fast_io(C)
+#use fast_io(D)
+
+// LCD 16x2
+#define LCD_ENABLE_PIN  PIN_D0
+#define LCD_RS_PIN      PIN_D1
+#define LCD_RW_PIN      PIN_D2
+#define LCD_DATA4       PIN_D4
+#define LCD_DATA5       PIN_D5
+#define LCD_DATA6       PIN_D6
+#define LCD_DATA7       PIN_D7
+
+#include <lcd.c>
+
+// Entradas y salida
+#define LED_VERDE      PIN_C0
+#define BTN_MENU       PIN_C1
+#define BTN_TELEFONO   PIN_C2
+
+// Tiempos aproximados
+#define APAGADO_MS     20000
+#define DEBOUNCE_MS    25
+#define ANIM_MS        250
+
+// Estado del sistema
+int1 pantalla_encendida = 1;
+int1 telefono_cargando = 0;
+
+int8 menu = 0;
+int8 porcentaje = 0;
+int8 animacion = 0;
+
+int16 adc_bateria = 0;
+int16 adc_solar = 0;
+
+int8 tension_bateria = 30;
+int8 tension_solar = 0;
+
+int16 inactividad = 0;
+int16 tiempo_anim = 0;
+
+int8 debounce_menu = 0;
+int8 debounce_telefono = 0;
+
+int1 menu_anterior = 1;
+int1 telefono_anterior = 1;
+
+int1 evento_menu = 0;
+int1 evento_telefono = 0;
+
+int1 canal_bateria = 1;
+
+int8 porcentaje_anterior = 255;
+int8 tension_bateria_anterior = 255;
+int8 tension_solar_anterior = 255;
+
+
+// Calcula valores simulados a partir de los potenciometros
+void calcular_valores(void)
+{
+   // Potenciometro de bateria: 0 a 100 %
+   porcentaje = ((int32)adc_bateria * 100) / 1023;
+
+   // Simula una bateria entre 3.0 V y 4.2 V
+   tension_bateria = 30 +
+      (((int32)adc_bateria * 12) / 1023);
+
+   // Potenciometro solar: simula entre 0.0 V y 5.0 V
+   tension_solar =
+      ((int32)adc_solar * 50) / 1023;
+}
+
+
+// Muestra el menu actual
+void mostrar_menu(void)
+{
+   lcd_putc('\f');
+
+   switch(menu)
+   {
+      case 0:
+         printf(lcd_putc, "   DK ENERGY");
+         printf(lcd_putc, "\n  POWER BANK");
+         break;
+
+      case 1:
+         printf(lcd_putc, "BATERIA PB: %u%%",
+                porcentaje);
+
+         if(telefono_cargando)
+            printf(lcd_putc, "\nCARGANDO");
+         else
+            printf(lcd_putc, "\nEN ESPERA");
+
+         break;
+
+      case 2:
+         printf(lcd_putc, "ESTADO BATERIA");
+         printf(lcd_putc, "\nTENSION: %u.%uV",
+                tension_bateria / 10,
+                tension_bateria % 10);
+         break;
+
+      case 3:
+         printf(lcd_putc, "PANEL SOLAR");
+         printf(lcd_putc, "\n%u.%uV %s",
+                tension_solar / 10,
+                tension_solar % 10,
+                tension_solar >= 35 ?
+                "ACTIVA" : "BAJA");
+         break;
+   }
+
+   porcentaje_anterior = porcentaje;
+   tension_bateria_anterior = tension_bateria;
+   tension_solar_anterior = tension_solar;
+}
+
+
+// Actualiza solo los datos que cambiaron
+void actualizar_datos(void)
+{
+   if(menu == 1 && porcentaje != porcentaje_anterior)
+   {
+      lcd_gotoxy(1,1);
+      printf(lcd_putc, "                ");
+      lcd_gotoxy(1,1);
+      printf(lcd_putc, "BATERIA PB: %u%%",
+             porcentaje);
+
+      porcentaje_anterior = porcentaje;
+   }
+
+   if(menu == 2 &&
+      tension_bateria != tension_bateria_anterior)
+   {
+      lcd_gotoxy(1,2);
+      printf(lcd_putc, "                ");
+      lcd_gotoxy(1,2);
+      printf(lcd_putc, "TENSION: %u.%uV",
+             tension_bateria / 10,
+             tension_bateria % 10);
+
+      tension_bateria_anterior = tension_bateria;
+   }
+
+   if(menu == 3 && tension_solar != tension_solar_anterior)
+   {
+      lcd_gotoxy(1,2);
+      printf(lcd_putc, "                ");
+      lcd_gotoxy(1,2);
+      printf(lcd_putc, "%u.%uV %s",
+             tension_solar / 10,
+             tension_solar % 10,
+             tension_solar >= 35 ?
+             "ACTIVA" : "BAJA");
+
+      tension_solar_anterior = tension_solar;
+   }
+}
+
+
+// Animacion solo cuando el telefono esta cargando
+void actualizar_animacion(void)
+{
+   lcd_gotoxy(1,2);
+
+   switch(animacion)
+   {
+      case 0:
+         printf(lcd_putc, "CARGANDO        ");
+         break;
+
+      case 1:
+         printf(lcd_putc, "CARGANDO.       ");
+         break;
+
+      case 2:
+         printf(lcd_putc, "CARGANDO..      ");
+         break;
+
+      default:
+         printf(lcd_putc, "CARGANDO...     ");
+         break;
+   }
+}
+
+
+void main(void)
+{
+   set_tris_a(0xFF);
+   set_tris_b(0xFF);
+   set_tris_c(0b11111110);
+   set_tris_d(0x00);
+
+   output_low(LED_VERDE);
+
+   // Configuracion del ADC
+   setup_adc_ports(sAN0 | sAN1 | VSS_VDD);
+   setup_adc(ADC_CLOCK_DIV_32);
+
+   set_adc_channel(0);
+
+   lcd_init();
+   calcular_valores();
+   mostrar_menu();
+
+   while(TRUE)
+   {
+      evento_menu = 0;
+      evento_telefono = 0;
+
+      // Lee los dos canales ADC alternadamente
+      if(canal_bateria)
+      {
+         adc_bateria = read_adc();
+         set_adc_channel(1);
+         canal_bateria = 0;
+      }
+      else
+      {
+         adc_solar = read_adc();
+         set_adc_channel(0);
+         canal_bateria = 1;
+      }
+
+      calcular_valores();
+
+      // Boton de menu y despertar
+      if(input(BTN_MENU) == 0)
+      {
+         if(debounce_menu < DEBOUNCE_MS)
+            debounce_menu++;
+
+         if(debounce_menu == DEBOUNCE_MS &&
+            menu_anterior)
+         {
+            evento_menu = 1;
+            menu_anterior = 0;
+         }
+      }
+      else
+      {
+         debounce_menu = 0;
+         menu_anterior = 1;
+      }
+
+      // Boton que simula conectar/desconectar el telefono
+      if(input(BTN_TELEFONO) == 0)
+      {
+         if(debounce_telefono < DEBOUNCE_MS)
+            debounce_telefono++;
+
+         if(debounce_telefono == DEBOUNCE_MS &&
+            telefono_anterior)
+         {
+            evento_telefono = 1;
+            telefono_anterior = 0;
+         }
+      }
+      else
+      {
+         debounce_telefono = 0;
+         telefono_anterior = 1;
+      }
+
+      // Navegacion por los menus
+      if(evento_menu)
+      {
+         inactividad = 0;
+
+         if(!pantalla_encendida)
+         {
+            pantalla_encendida = 1;
+            menu = 0;
+            mostrar_menu();
+         }
+         else
+         {
+            menu++;
+
+            if(menu > 3)
+               menu = 0;
+
+            mostrar_menu();
+         }
+      }
+
+      // Conexion o desconexion simulada del telefono
+      if(evento_telefono)
+      {
+         inactividad = 0;
+         telefono_cargando = !telefono_cargando;
+
+         // Al conectar, abrir directamente bateria
+         pantalla_encendida = 1;
+         menu = 1;
+         animacion = 0;
+         tiempo_anim = 0;
+
+         mostrar_menu();
+      }
+
+      // LED independiente del LCD
+      if(telefono_cargando)
+         output_high(LED_VERDE);
+      else
+         output_low(LED_VERDE);
+
+      // Animacion de carga
+      if(telefono_cargando)
+      {
+         tiempo_anim++;
+
+         if(tiempo_anim >= ANIM_MS)
+         {
+            tiempo_anim = 0;
+            animacion++;
+
+            if(animacion > 3)
+               animacion = 0;
+
+            if(pantalla_encendida && menu == 1)
+               actualizar_animacion();
+         }
+      }
+      else
+      {
+         tiempo_anim = 0;
+         animacion = 0;
+      }
+
+      actualizar_datos();
+
+      // Apagado automatico a los 20 segundos
+      if(pantalla_encendida)
+      {
+         if(inactividad < APAGADO_MS)
+            inactividad++;
+
+         if(inactividad >= APAGADO_MS)
+         {
+            pantalla_encendida = 0;
+            lcd_putc('\f');
+         }
+      }
+
+      delay_ms(1);
+   }
+}

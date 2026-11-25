@@ -39,7 +39,4 @@ Units=Metric
 TimeEnd=100m
 Timestep=1u
 
-[ERROR]
-File could not be loaded properly in Proteus 8 due to format mismatch.
-
 [/PROJECT]
