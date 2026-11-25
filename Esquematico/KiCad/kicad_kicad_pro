@@ -1,0 +1,23 @@
+(projekt
+  (version 20240108)
+  (schematic "DK_Energy.kicad_sch")
+  (pcb "DK_Energy.kicad_pcb")
+  (meta
+    (filename "DK_Energy.kicad_pro")
+    (version 3)
+  )
+  (sheets
+    (sheet 1 "DK_Energy" (uuid "a1b2c3d4-e5f6-7890-abcd-ef1234567890"))
+  )
+  (seealso "")
+  (about
+    (maker "Hermes Agent")
+    (comments
+      (line 1 "DK Energy - Powerbank Solar 18650")
+      (line 2 "Proyecto Integrador 7mo Año Electrónica")
+      (line 3 "Benjamin Rincon - Leandro Merense")
+      (line 3 "Arquitectura: Panel -> Schottky -> TP4056 -> 18650 -> MT3608 -> USB-A")
+      (line 4 "Control: PIC16F887 + LCD 16x2 + LM393")
+    )
+  )
+)
